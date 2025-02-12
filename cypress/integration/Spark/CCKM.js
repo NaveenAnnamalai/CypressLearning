@@ -7,7 +7,7 @@ describe('CCKM', function () {
         sparkpage.isMessageVisible()
         sparkpage.compareQuestion('What is account assure')
     })
-    it('Verify user is able to provide General Feedback of the application', function () {
+    it.only('Verify user is able to provide General Feedback of the application', function () {
         sparkpage.loginSpark();
         sparkpage.generalFeedbackButton().click()
         cy.get('lib-feedback-modal lib-dropdown').click()
