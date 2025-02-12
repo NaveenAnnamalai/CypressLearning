@@ -1,0 +1,15 @@
+describe('Delete',function(){
+    it('Verify user is able to delete a thread',function(){
+        //cy.intercept('POST', '/portal/controller/view/faq/').as('pageLoad')
+        cy.visit('https://breadfinancialstg.rightanswers.com/portal/sa/?&sl=&linw=')
+        //cy.wait('@pageLoad').its('response.statusCode').should('eq',200)
+        //cy.wait('@pageLoad').its('response.statusCode').should('eq',200)
+        cy.Loading()
+        cy.get('#aiTab').click()
+        cy.get('lib-recent-question-sidebar .scrollbar-custom').find('div[role="button"]').eq(0).trigger('mouseenter')
+        cy.get('lib-options',{timeout:2000}).click()
+        cy.get("lib-options div div:nth-child(2)").click() 
+        cy.get('lib-button[ng-reflect-label="Delete"]').click()
+        cy.get('.mat-mdc-snack-bar-label').should('be.visible').and('contain','Thread successfully deleted')
+                })
+        })
