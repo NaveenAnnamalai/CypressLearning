@@ -28,55 +28,55 @@ class sparkpage {
 
   //Calling Login method
   loginSpark() {
-    this.elements.Login()
+    return this.elements.Login()
   }
   compareQuestion(typeText) {
-    this.elements.compareRecentQuestion().then(function (myText) {
+    return this.elements.compareRecentQuestion().then(function (myText) {
       const qnText = myText.text().replace('&nbsp;', '').trim()
       cy.wrap(qnText).should('eq', typeText)
     })
   }
   askQuestion(typeText) {
-    this.elements.askAQuestion().type(typeText)
+    return this.elements.askAQuestion().type(typeText)
       .then(function () {
         cy.get("lib-chat-input svg[class='ng-star-inserted']").click()
       })
   }
   isMessageVisible() {
-    this.elements.messageVisible()
+    return this.elements.messageVisible()
   }
   isCaringMessageVisible() {
-    this.elements.caringMessage()
+    return this.elements.caringMessage()
   }
   isReferencedArticleVisible() {
-    this.elements.referencedArticles()
+    return this.elements.referencedArticles()
   }
   isSnackBarVisible() {
-    this.elements.snackBar()
+    return this.elements.snackBar()
   }
   isRecentQuestionPanelVisible() {
-    this.elements.recentQuestionPanel().should('not.be.hidden')
+    return this.elements.recentQuestionPanel().should('not.be.hidden')
   }
   isRecentQuestionPanelHidden() {
-    this.elements.recentQuestionPanel().should('be.hidden')
+    return this.elements.recentQuestionPanel().should('be.hidden')
   }
   vector() {
-    this.elements.vectorButton()
+    return this.elements.vectorButton()
   }
   initiateNewThread() {
-    this.elements.initiateNewThreadLink()
+    return this.elements.initiateNewThreadLink()
   }
   generalFeedbackButton() {
-    this.elements.genFeedback()
+    return this.elements.genFeedback()
   }
   messageFeedbackSuccess() {
-    this.elements.messageFeedback()
+    return this.elements.messageFeedback()
   }
   thumbUp(){
-    this.elements.messageThumbUp()
+    return this.elements.messageThumbUp()
   }
   thumbDown(){
-    this.elements.messageThumbDown()
+    return this.elements.messageThumbDown()
   }
   
 
